@@ -3,4 +3,4 @@ const LAST_FM_URI = 'http://ws.audioscrobbler.com/2.0';
 
 export const getTopAlbumsURL = (artistName: string): string =>
   // eslint-disable-next-line max-len
-  `${LAST_FM_URI}?method=artist.gettopalbums&artist=${artistName.toLowerCase()}&api_key=${LAST_FM_API_KEY}&format=json`;
+  `${LAST_FM_URI}?method=artist.gettopalbums&artist=${artistName}&api_key=${LAST_FM_API_KEY}&format=json`;
