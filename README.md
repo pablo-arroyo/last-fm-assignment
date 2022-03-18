@@ -4,9 +4,9 @@ This project was an assigment for interview, it is not complete since the time l
 
 It has the following functionalities:
 
-[X] You can search for the top albums of an artist (you have to click the button though, the input it's not of submit type). 
+* You can search for the top albums of an artist (you have to click the button though, the input it's not of submit type). 
 This will show you a list of cards that is responsive with the album cover, album name, and a button to go into the album details (which does not work for the current scope). 
-[ ] There's a component for Album Details, however because of time, I was not able to add the router part that I had in mind.
+* There's a component for Album Details, however because of time, I was not able to add the router part that I had in mind.
 
 ## Technologies Used
 
