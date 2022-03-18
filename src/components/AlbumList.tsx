@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@mui/material';
-import { Album } from '../pages/Home.types';
+import { Album } from '../utils/Info.types';
 import { AlbumOverview } from './index';
 
 interface AlbumListProps {

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Grid } from '@mui/material';
 
 import { AlbumList, SearchInput } from '../components';
-import { Album, LastFmResponse } from './Home.types';
+import { Album, LastFmAlbumResponse } from '../utils/Info.types';
 import { getTopAlbumsURL } from '../utils/Network.util';
 
 const CustomGrid = styled(Grid)`
@@ -23,13 +23,9 @@ function Home(): JSX.Element {
         data: {
           topalbums: { album },
         },
-      } = await axios.get<LastFmResponse>(getTopAlbumsURL(artistName));
+      } = await axios.get<LastFmAlbumResponse>(getTopAlbumsURL(artistName));
 
-      return album
-        .filter(({ mbid }) => mbid !== undefined)
-        .map(({ name, mbid, image }) => {
-          return { name, mbid, image };
-        });
+      return album.filter(({ mbid }) => mbid !== undefined);
     } catch (error) {
       throw Error(
         `Something went wrong trying to fetch top albums -> ${error}`
