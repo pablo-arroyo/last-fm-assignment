@@ -24,7 +24,7 @@ For this project the following technologies were added:
 
 For the project to run, you need to install the following dependencies in your computer:
 
-* [NodeJS](https://nodejs.org/en/)
+* [NodeJS](https://nodejs.org/en/) (You need to install version >=15.0.0)
 * [Yarn](https://yarnpkg.com)
 
 Once you have both of the above frameworks installed, you have to run the following commands in your terminal, on the root folder of the project:
