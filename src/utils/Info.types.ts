@@ -28,13 +28,26 @@ export interface TrackResponse {
   track: Array<Track>;
 }
 
-export interface AlbumInfoResponse {
+export interface AlbumInfo {
   artist: string;
+  image: Array<Image>;
   name: string;
   tracks: TrackResponse;
   wiki: Wiki;
 }
 
+export interface AlbumInfoResponse {
+  album: AlbumInfo;
+}
+
 export interface LastFmAlbumResponse {
   topalbums: TopAlbum;
+}
+
+export interface AlbumInformation {
+  artistName: string;
+  albumName: string;
+  albumCoverImg: string;
+  publishedDate: string;
+  trackList: Array<string>;
 }

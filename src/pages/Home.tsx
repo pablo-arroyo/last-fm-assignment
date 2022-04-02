@@ -4,12 +4,25 @@ import styled from 'styled-components';
 import { Grid } from '@mui/material';
 
 import { AlbumList, SearchInput } from '../components';
-import { Album, LastFmAlbumResponse } from '../utils/Info.types';
-import { getTopAlbumsURL } from '../utils/Network.util';
+import { Album, LastFmAlbumResponse, getTopAlbumsURL } from '../utils';
 
 const CustomGrid = styled(Grid)`
   margin-top: 2rem;
 `;
+
+const fetchTopAlbums = async (artistName: string): Promise<Array<Album>> => {
+  try {
+    const {
+      data: {
+        topalbums: { album },
+      },
+    } = await axios.get<LastFmAlbumResponse>(getTopAlbumsURL(artistName));
+
+    return album.filter(({ mbid }) => mbid !== undefined);
+  } catch (error) {
+    throw Error(`Something went wrong trying to fetch top albums -> ${error}`);
+  }
+};
 
 function Home(): JSX.Element {
   const [artistName, setArtistName] = useState('');
@@ -17,27 +30,12 @@ function Home(): JSX.Element {
   const updateArtistName = (artistNameValue: string): void => {
     setArtistName(artistNameValue);
   };
-  const fetchTopAlbums = async (): Promise<Array<Album>> => {
-    try {
-      const {
-        data: {
-          topalbums: { album },
-        },
-      } = await axios.get<LastFmAlbumResponse>(getTopAlbumsURL(artistName));
-
-      return album.filter(({ mbid }) => mbid !== undefined);
-    } catch (error) {
-      throw Error(
-        `Something went wrong trying to fetch top albums -> ${error}`
-      );
-    }
-  };
 
   const searchClickHandler = (): void => {
     if (artistName === '') {
       alert('Please write an artist name');
     } else {
-      fetchTopAlbums()
+      fetchTopAlbums(artistName)
         .then((result) => {
           setAlbums(result);
         })

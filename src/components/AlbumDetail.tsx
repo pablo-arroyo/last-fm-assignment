@@ -6,7 +6,7 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
-import { MediumCard, NoStyleLink } from './shared';
+import { LargeCard, NoStyleLink } from './shared';
 
 interface AlbumDetailProps {
   artistName: string;
@@ -24,7 +24,7 @@ function AlbumDetail({
   trackList,
 }: AlbumDetailProps): JSX.Element {
   return (
-    <MediumCard>
+    <LargeCard>
       <CardMedia
         component="img"
         height="400"
@@ -49,7 +49,7 @@ function AlbumDetail({
               variant="body1"
               component="div"
             >
-              `* ${track}`
+              {`* ${track}`}
             </Typography>
           ))}
       </CardContent>
@@ -58,7 +58,7 @@ function AlbumDetail({
           <NoStyleLink to="/">Go back</NoStyleLink>
         </Button>
       </CardActions>
-    </MediumCard>
+    </LargeCard>
   );
 }
 
