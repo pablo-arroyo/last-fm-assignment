@@ -1,17 +1,12 @@
 import React from 'react';
 import {
   Button,
-  Card,
   CardActions,
   CardContent,
   CardMedia,
   Typography,
 } from '@mui/material';
-import styled from 'styled-components';
-
-const CustomCard = styled(Card)`
-  width: 350px;
-`;
+import { MediumCard, NoStyleLink } from './shared';
 
 interface AlbumDetailProps {
   artistName: string;
@@ -29,7 +24,7 @@ function AlbumDetail({
   trackList,
 }: AlbumDetailProps): JSX.Element {
   return (
-    <CustomCard>
+    <MediumCard>
       <CardMedia
         component="img"
         height="400"
@@ -59,9 +54,11 @@ function AlbumDetail({
           ))}
       </CardContent>
       <CardActions>
-        <Button size="small">Go Back</Button>
+        <Button size="small">
+          <NoStyleLink to="/">Go back</NoStyleLink>
+        </Button>
       </CardActions>
-    </CustomCard>
+    </MediumCard>
   );
 }
 

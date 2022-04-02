@@ -1,41 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import {
-  Button,
-  Card,
-  CardActions,
-  CardMedia,
-  CardContent,
-  Typography,
-} from '@mui/material';
+import { Button, CardActions, CardMedia, Typography } from '@mui/material';
+import { NoStyleLink, MediumCard, MediumCardContent } from './shared';
 
 interface AlbumOverviewProps {
+  mbid: string;
   name: string;
   img: string;
 }
 
-const CustomCard = styled(Card)`
-  width: 350px;
-`;
-
-const CustomCardContent = styled(CardContent)`
-  height: 5rem;
-`;
-
-function AlbumOverview({ name, img }: AlbumOverviewProps): JSX.Element {
+function AlbumOverview({ name, img, mbid }: AlbumOverviewProps): JSX.Element {
   return (
-    <CustomCard>
+    <MediumCard>
       <CardMedia component="img" height="400" image={img} alt={name} />
-      <CustomCardContent>
+      <MediumCardContent>
         <Typography gutterBottom variant="h5" component="div">
           {name}
         </Typography>
-      </CustomCardContent>
+      </MediumCardContent>
       <CardActions>
-        <Button size="small">Album Details</Button>
+        <Button size="small">
+          <NoStyleLink to={`album-detail/${mbid}`}>Album Details</NoStyleLink>
+        </Button>
       </CardActions>
-    </CustomCard>
+    </MediumCard>
   );
 }
 

@@ -16,6 +16,7 @@ function AlbumList({ albumList }: AlbumListProps): JSX.Element {
         return (
           <Grid key={mbid} item md>
             <AlbumOverview
+              mbid={mbid}
               name={name}
               img={albumImage ? albumImage['#text'] : 'not-found'}
             />
