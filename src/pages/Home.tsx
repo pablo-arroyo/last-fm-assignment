@@ -24,6 +24,14 @@ const fetchTopAlbums = async (artistName: string): Promise<Array<Album>> => {
   }
 };
 
+const favoriteTrackListHandler = (): void => {
+  const trackListString = Object.keys(localStorage)
+    .map((key) => key)
+    .join('\n\n');
+
+  alert(`Favorite tracks: \n\n${trackListString}`);
+};
+
 function Home(): JSX.Element {
   const [artistName, setArtistName] = useState('');
   const [albums, setAlbums] = useState<Array<Album>>([]);
@@ -53,6 +61,7 @@ function Home(): JSX.Element {
             artistName={artistName}
             setArtistName={updateArtistName}
             onSearchHandler={searchClickHandler}
+            favoriteTrackListHandler={favoriteTrackListHandler}
           />
         </Grid>
       </Grid>

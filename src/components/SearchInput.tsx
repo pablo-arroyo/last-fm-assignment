@@ -11,12 +11,14 @@ interface SearchInputProps {
   artistName: string;
   setArtistName: (artistName: string) => void;
   onSearchHandler: () => void;
+  favoriteTrackListHandler: () => void;
 }
 
 function SearchInput({
   artistName,
   setArtistName,
   onSearchHandler,
+  favoriteTrackListHandler,
 }: SearchInputProps): JSX.Element {
   return (
     <Grid container justifyContent="center">
@@ -37,7 +39,17 @@ function SearchInput({
           variant="contained"
           onClick={onSearchHandler}
         >
-          search
+          Search
+        </Button>
+      </GridButtonItem>
+      <GridButtonItem item alignItems="stretch">
+        <Button
+          type="submit"
+          size="large"
+          variant="contained"
+          onClick={favoriteTrackListHandler}
+        >
+          Favorite Tracks
         </Button>
       </GridButtonItem>
     </Grid>

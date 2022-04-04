@@ -17,7 +17,6 @@ const fetchAlbumInformation = async (mbid: string): Promise<AlbumInfo> => {
       data: { album: albumInfo },
     } = await axios.get<AlbumInfoResponse>(getAlbumInfoURL(mbid));
 
-    console.log(albumInfo);
     return albumInfo;
   } catch (error) {
     throw new Error(
@@ -63,9 +62,9 @@ function AlbumDetailPage(): JSX.Element {
     }
   }, [mbid]);
 
-  if (albumInformation) {
-    return (
-      <Grid container justifyContent="center">
+  return (
+    <Grid container justifyContent="center">
+      {albumInformation ? (
         <AlbumDetail
           albumName={albumInformation.albumName}
           albumCoverImg={albumInformation.albumCoverImg}
@@ -73,13 +72,9 @@ function AlbumDetailPage(): JSX.Element {
           publishedDate={albumInformation.publishedDate}
           trackList={albumInformation.trackList}
         />
-      </Grid>
-    );
-  }
-
-  return (
-    <Grid container justifyContent="center">
-      <CircularProgress />
+      ) : (
+        <CircularProgress />
+      )}
     </Grid>
   );
 }

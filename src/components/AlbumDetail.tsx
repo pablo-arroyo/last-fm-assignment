@@ -4,8 +4,13 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
   Typography,
 } from '@mui/material';
+import { StarBorder as StarBorderIcon } from '@mui/icons-material';
 import { LargeCard, NoStyleLink } from './shared';
 
 interface AlbumDetailProps {
@@ -15,6 +20,17 @@ interface AlbumDetailProps {
   publishedDate: string;
   trackList: Array<string>;
 }
+
+const favoriteClickHandler = (track: string): void => {
+  const favoriteTrack = localStorage.getItem(track);
+  if (favoriteTrack) {
+    localStorage.removeItem(track);
+    alert(`${track} removed from your favorite track list`);
+  } else {
+    localStorage.setItem(track, track);
+    alert(`Added ${track} to favorite track list`);
+  }
+};
 
 function AlbumDetail({
   artistName,
@@ -41,17 +57,27 @@ function AlbumDetail({
         <Typography gutterBottom variant="subtitle1" component="div">
           {publishedDate}
         </Typography>
-        {trackList.length > 0 &&
-          trackList.map((track) => (
-            <Typography
-              key={track}
-              gutterBottom
-              variant="body1"
-              component="div"
-            >
-              {`* ${track}`}
-            </Typography>
-          ))}
+        <List>
+          {trackList.length > 0 &&
+            trackList.map((track) => (
+              <ListItem
+                key={track}
+                secondaryAction={
+                  <IconButton
+                    edge="end"
+                    aria-label="favorite"
+                    onClick={() => {
+                      favoriteClickHandler(track);
+                    }}
+                  >
+                    <StarBorderIcon />
+                  </IconButton>
+                }
+              >
+                <ListItemText primary={track} />
+              </ListItem>
+            ))}
+        </List>
       </CardContent>
       <CardActions>
         <Button size="small">
