@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d1faf9d3-bb1f-4787-8784-4a7905dcfdeb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AlbumDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AlbumDetail.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AlbumDetailPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AlbumDetailPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +44,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1648665137292</updated>
-      <workItem from="1648665139923" duration="22154000" />
+      <workItem from="1648665139923" duration="23299000" />
     </task>
     <servers />
   </component>

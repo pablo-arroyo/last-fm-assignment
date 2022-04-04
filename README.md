@@ -5,8 +5,19 @@ This project was an assigment for interview, it is not complete since the time l
 It has the following functionalities:
 
 * You can search for the top albums of an artist (you have to click the button though, the input it's not of submit type). 
-This will show you a list of cards that is responsive with the album cover, album name, and a button to go into the album details (which does not work for the current scope). 
-* There's a component for Album Details, however because of time, I was not able to add the router part that I had in mind.
+This will show you a list of cards that is responsive with the album cover, album name, and a button to go into the album details. 
+* There's a component for Album Details that contains a picture of the album cover, artist name, album name, 
+date uploaded into the API (if available), and a list of all of its tracks.
+* At the end of each track, there's a star icon which you can use to add the track into your favorite track list,
+if that track it's already in the list, then it will remove it from there (there's no visual difference between a track that it's or isn't favorite).
+* At the button of the album details there's also a button to go bak to the home page
+(it doesn't save the state of the previous component though, you'll have the make a search to view items again).
+* There's also a button to check your favorite track list at the Home Page, which will show you an alert 
+with all the tracks that you have added into your list.
+
+For data management I chose to use `localStorage` to save the list of favorite tracks,
+this does not completely persist the list, however you will be able to check your favorite tracks
+between albums, and even sessions.
 
 ## Technologies Used
 
